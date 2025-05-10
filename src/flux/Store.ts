@@ -1,5 +1,5 @@
-import { Action } from './actions';
-import { dispatcher } from './dispatcher';
+import { Action } from './Actions';
+import { dispatcher } from './Dispatcher';
 
 export type Plant = {
   id: string;

@@ -1,4 +1,4 @@
-import { Action } from './actions';
+import { Action } from './Actions';
 
 type Listener = (action: Action) => void;
 
