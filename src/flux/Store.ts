@@ -8,7 +8,9 @@ export type Plant = {
   image: string;
 };
 
-type AppState = {
+
+
+export type AppState = {
   gardenName: string;
   gardenPlants: string[]; 
   allPlants: Plant[];

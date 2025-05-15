@@ -1,5 +1,3 @@
-import { store } from '../flux/Store';
-
 class Root extends HTMLElement {
     constructor() {
         super();

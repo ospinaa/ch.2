@@ -1,7 +1,7 @@
-import { State } from "../flux/Store";
+
+import type { AppState as State } from "../flux/Store.ts";
 
 export function isStateValid(state: State): boolean {
-    // TODO: cambia algo aqui
-    return false
+    return state !== null && state !== undefined;
 }
 

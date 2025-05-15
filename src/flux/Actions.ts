@@ -1,3 +1,5 @@
+import type { Plant } from '../services/Plant.ts';
+
 export type Action =
   | { type: 'ADD_PLANT_TO_GARDEN'; payload: { plantId: string } }
   | { type: 'REMOVE_PLANT_FROM_GARDEN'; payload: { plantId: string } }
