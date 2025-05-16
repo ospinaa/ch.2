@@ -1,20 +1,29 @@
-import { Action } from './Actions';
+// src/flux/Dispatcher.ts
 
-type Listener = (action: Action) => void;
+import { Plant } from '../services/Plants';
 
-class Dispatcher {
-  private listeners: Listener[] = [];
+export type Action =
+  | { type: "LOAD_ALL_PLANTS"; payload: Plant[] }
+  | { type: "ADD_TO_GARDEN"; payload: string }
+  | { type: "REMOVE_FROM_GARDEN"; payload: string }
+  | { type: "SET_GARDEN_NAME"; payload: string }
+  | { type: "SET_PAGE"; payload: string }
+  | { type: "EDIT_PLANT"; payload: Plant };
 
-  register(listener: Listener) {
-    this.listeners.push(listener);
-  }
+type Callback = (action: Action) => void;
 
-  dispatch(action: Action) {
-    for (const listener of this.listeners) {
-      listener(action);
+export class Dispatcher {
+    private _listeners: Callback[] = [];
+
+    register(callback: Callback): void {
+        this._listeners.push(callback);
     }
-  }
+
+    dispatch(action: Action): void {
+        for (const listener of this._listeners) {
+            listener(action);
+        }
+    }
 }
 
-export const dispatcher = new Dispatcher();
-
+export const AppDispatcher = new Dispatcher();

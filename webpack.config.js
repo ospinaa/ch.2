@@ -29,7 +29,7 @@ export default {
     },
     // Configura las extensiones de archivo que Webpack resolverá automáticamente
     resolve: {
-        extensions: ['.tsx', '.ts', '.js'],
+        extensions: ['.tsx', '.ts', '.js', 'json'],
     },
     // Configura la salida del bundle
     output: {
@@ -39,6 +39,6 @@ export default {
         path: path.resolve(__dirname, 'dist'),
     },
     devServer: {
-        port: 8082
+        port: 8080
     }
 };

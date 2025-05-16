@@ -73,4 +73,3 @@ class PlantCard extends HTMLElement {
 }
 
 export default PlantCard;
-
